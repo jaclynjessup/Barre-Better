@@ -36,6 +36,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :test do
+  gem 'coveralls', require: false
+end
+
 gem 'foundation-rails'
 gem 'devise'
 
