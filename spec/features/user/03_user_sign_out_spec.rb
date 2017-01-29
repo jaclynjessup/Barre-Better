@@ -18,7 +18,7 @@ feature 'Sign Out' do
     expect(page).to have_content("Welcome Back! It's time to Tuck!")
     expect(page).to have_content("Sign Out")
     click_link 'Sign Out'
-    expect(page).to have_content("See You At The Barre! Signed out successfully.")
+    expect(page).to have_content("Signed out successfully. See You At The Barre!")
     expect(page).to have_content("Sign In")
   end
 end
