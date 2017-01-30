@@ -7,6 +7,7 @@ require 'rails_helper'
 #   [x] Page should not have a sign up link'
 
 feature 'Sign Out' do
+  after(:all) {User.destroy_all}
   scenario 'user signs out' do
     user = FactoryGirl.create(:user)
     visit root_path
