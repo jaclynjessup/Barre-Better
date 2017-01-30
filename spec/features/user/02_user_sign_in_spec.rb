@@ -3,9 +3,9 @@ require 'rails_helper'
 # As an unauthenticated user
 # I want to sign in
 # So that I can view and signup for barre classes
-#   [] Home page must have sign in link
-#   [] I must enter in my email and password
-#   [] If I do not supply the required information, I receive an error
+#   [x] Home page must have sign in link
+#   [x] I must enter in my email and password
+#   [x] If I do not supply the required information, I receive an error
 
 feature 'Sign in' do
   scenario 'an existing user specifies a valid email and password' do

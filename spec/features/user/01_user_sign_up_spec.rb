@@ -3,9 +3,9 @@ require 'rails_helper'
 # As a prospective user
 # I want to create an account
 # So that I can view and signup for barre classes
-#   [] Home page must have a sign up link
-#   [] I must enter in all information to create an account
-#   [] If I do not supply the required information, I receive an error
+#   [x] Home page must have a sign up link
+#   [x] I must enter in all information to create an account
+#   [x] If I do not supply the required information, I receive an error
 
 feature 'Sign Up' do
   scenario 'specifying valid and required information' do
