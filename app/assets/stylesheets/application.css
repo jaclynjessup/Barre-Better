@@ -12,4 +12,38 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+
+ .top-bar a {
+  color: white;
+  font-family: Lobster;
+  font-size: 32px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+}
+
+a:hover {
+    color: #D2C9CC;
+}
+
+.top-bar {
+  color: white;
+  font-size: 32px;
+}
+
+h1{
+  font-family: Lobster;
+  text-align: center;
+  color: #FF8383;
+}
+
+.user-form {
+  text-align: center;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}

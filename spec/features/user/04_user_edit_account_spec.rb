@@ -3,15 +3,15 @@ require 'rails_helper'
 # As an authenticated user
 # I want to update my information
 # So that I can keep my profile up to date
-#   [] I must be sign in to see my edit profile link
-#   [] If I do not supply the required information, I receive an error
+#   [x] I must be sign in to see my edit profile link
+#   [x] If I do not supply the required information, I receive an error
 
 # As an authenticated user
 # I want to delete my account
 # So that my information is no longer retained by the app
-#   [] I must be signed in to see edit profile link
-#   [] I must go to edit profile page
-#   [] I must see a delete account link
+#   [x] I must be signed in to see edit profile link
+#   [x] I must go to edit profile page
+#   [x] I must see a delete account link
 
 feature "user edits their account" do
 

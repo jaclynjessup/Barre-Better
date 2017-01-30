@@ -3,8 +3,8 @@ require 'rails_helper'
 # As an authenticated user
 # I want to sign out
 # So that no one else can signup for barre classes on my behalf
-#   [] Page must have sign out link when user is signed in
-#   [] Page should not have a sign up link'
+#   [x] Page must have sign out link when user is signed in
+#   [x] Page should not have a sign up link'
 
 feature 'Sign Out' do
   scenario 'user signs out' do
