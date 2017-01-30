@@ -56,3 +56,13 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+require "valid_attribute"
+
+RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+  config.include Warden::Test::Helpers
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
+end
