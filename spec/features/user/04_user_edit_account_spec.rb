@@ -18,7 +18,10 @@ feature "user edits their account" do
   before(:each) do
     @user = FactoryGirl.create(:user)
     visit root_path
-    sign_in @user
+    click_link 'Sign In'
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
+    click_button 'Sign In'
     click_link 'My Account'
   end
 
@@ -59,7 +62,7 @@ feature "user edits their account" do
   end
 
   scenario "user can delete their account" do
-    click_link "Cancel your account"
+    click_button "Cancel your account"
     expect(page).to have_content "Bye! Your account has been successfully cancelled. We hope to see you again soon."
     expect(User.all.length).to eq(0)
   end

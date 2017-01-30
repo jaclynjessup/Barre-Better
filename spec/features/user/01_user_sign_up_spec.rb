@@ -15,12 +15,11 @@ feature 'Sign Up' do
     fill_in 'First Name', with: 'Heromine'
     fill_in 'Last Name', with: 'Granger'
     fill_in 'Username', with: 'leviOsa'
-    fill_in 'Email', with: 'hg@hogwarts.edu'
+    fill_in 'Email', with: 'hg@hogwarts.com'
     fill_in 'Password', with: 'gryffindor'
     fill_in 'Confirm Password', with: 'gryffindor'
     click_button 'Sign Up'
-
-    expect(page).to have_content("Welcome to Barre Better! You Have Successfully Signed In.")
+    expect(page).to have_content("Welcome to Barre Better! You Have Successfully Signed Up.")
     expect(page).to have_content("Sign Out")
   end
 
