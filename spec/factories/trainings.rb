@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :training do
     sequence(:name) { |n| "name#{n}" }
     timeslot
-    sequence(:date) { 3.days.ago }
-    user
+    sequence(:date) { Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today) }
+    instructor
   end
 end

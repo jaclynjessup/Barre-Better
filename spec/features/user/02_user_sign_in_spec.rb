@@ -10,7 +10,7 @@ require 'rails_helper'
 feature 'Sign in' do
   scenario 'an existing user specifies a valid email and password' do
     user = FactoryGirl.create(:user)
-    visit root_path
+    visit '/'
     click_link 'Sign In'
 
     fill_in 'Email', with: user.email
@@ -28,7 +28,7 @@ feature 'Sign in' do
   end
 
   scenario 'a nonexistant email and password is supplied' do
-    visit root_path
+    visit '/'
     click_link 'Sign In'
     fill_in 'Email', with: 'noone@gmail.com'
     fill_in 'Password', with: 'iamnoone'

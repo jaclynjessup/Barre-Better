@@ -13,32 +13,46 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+ *= require font-awesome
 
  */
 
- .top-bar a {
+.logo {
   color: white;
   font-family: Lobster;
-  font-size: 32px;
+  font-size: 46px;
   font-style: normal;
   font-variant: normal;
   font-weight: 500;
   line-height: 26.4px;
+}
+.top-bar li {
+  font-family: "Patrick Hand";
+}
+
+.top-bar a {
+  color: white;
+}
+
+#responsive-menu {
+  font-family: "Patrick Hand";
+  color: white;
+  font-size: 26px;
 }
 
 a:hover {
     color: #D2C9CC;
 }
 
-.top-bar {
-  color: white;
-  font-size: 32px;
-}
 
-h1{
+h1 {
   font-family: Lobster;
   text-align: center;
   color: #FF8383;
+}
+
+h3 {
+  text-align: center;
 }
 
 .user-form {
@@ -46,4 +60,21 @@ h1{
   width: 20%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.class-form {
+  text-align: center;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #F36B75;
+  border-radius: 12px;
+}
+.button:hover {
+    background-color: #F36B75;
+    color: white;
 }

@@ -10,14 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130192820) do
+ActiveRecord::Schema.define(version: 20170131183413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "instructors", force: :cascade do |t|
+    t.string   "full_name",  null: false
+    t.text     "bio",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "timeslots", force: :cascade do |t|
-    t.time "start_time", null: false
-    t.time "end_time",   null: false
+    t.string "start_time", null: false
+    t.string "end_time",   null: false
   end
 
   create_table "trainings", force: :cascade do |t|
@@ -27,7 +34,17 @@ ActiveRecord::Schema.define(version: 20170130192820) do
     t.integer  "instructor_id", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["instructor_id"], name: "index_trainings_on_instructor_id", using: :btree
     t.index ["timeslot_id"], name: "index_trainings_on_timeslot_id", using: :btree
+  end
+
+  create_table "user_histories", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "training_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["training_id"], name: "index_user_histories_on_training_id", using: :btree
+    t.index ["user_id"], name: "index_user_histories_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

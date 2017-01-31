@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Training, type: :model do
   time = FactoryGirl.create(:timeslot)
-  instructor = FactoryGirl.create(:user, role: "instructor")
+  instructor = FactoryGirl.create(:instructor)
   timeslot = FactoryGirl.create(:timeslot)
 
 
@@ -13,9 +13,12 @@ describe Training, type: :model do
   it { should_not have_valid(:date).when(nil, "") }
 
   it { should belong_to(:timeslot) }
+  it { should belong_to(:instructor) }
 
   it { should have_valid(:timeslot).when(timeslot) }
   it { should_not have_valid(:timeslot).when(nil) }
 
-  after(:all) {User.destroy_all}
+  it { should have_valid(:instructor).when(instructor) }
+  it { should_not have_valid(:instructor).when(nil) }
+
 end

@@ -1,1 +1,28 @@
-<h1>Welcome to Barre Better!</h1>
+<h3>Schedule for Barre Better</h3>
+
+<div class="row">
+  <div class="columns">
+    <div class="callout">
+      <table style="width:100%" class="hover">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Class</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @trainings.each do |training| %>
+            <tr a href="/trainings/<%= training.id %>">
+              <td><span><%= training.date.strftime("%B %d %Y") %></span></td>
+              <td><span><%= training.timeslot.start_time %> - <%= training.timeslot.end_time %></span></td>
+              <td><span><%= training.name %></span></td>
+              <td><span><%= training.instructor.full_name %></span></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

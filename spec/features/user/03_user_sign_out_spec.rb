@@ -10,7 +10,7 @@ feature 'Sign Out' do
   after(:all) {User.destroy_all}
   scenario 'user signs out' do
     user = FactoryGirl.create(:user)
-    visit root_path
+    visit '/'
     click_link 'Sign In'
 
     fill_in 'Email', with: user.email
