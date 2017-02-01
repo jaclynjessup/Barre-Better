@@ -1,0 +1,27 @@
+<div class="class-form">
+  <%= form_for(@training) do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <%= f.label :timeslot %>
+      <%= f.collection_radio_buttons(:timeslot, @timeslots, :id, :start_time) %>
+    </div>
+
+    <div>
+      <%= f.label :date %>
+      <%= f.date_select :date %>
+    </div>
+
+    <div>
+      <%= f.label :instructor %>
+      <%= f.collection_radio_buttons(:instructor, @instructors, :id, :full_name)%>
+    </div>
+
+    <div>
+      <%= f.submit value="Create Class", :class => "button"%>
+    </div>
+  <% end %>
+</div>

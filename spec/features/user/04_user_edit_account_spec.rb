@@ -17,7 +17,7 @@ feature "user edits their account" do
 
   before(:each) do
     @user = FactoryGirl.create(:user)
-    visit root_path
+    visit '/'
     click_link 'Sign In'
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: @user.password

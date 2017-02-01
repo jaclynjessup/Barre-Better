@@ -4,38 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Barre Better" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "barrebetter" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Patrick+Hand" />
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans+Condensed:300" rel="stylesheet">
 
   <div class="top-bar">
     <div class="top-bar-title">
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
         <button class="menu-icon dark" type="button" data-toggle></button>
       </span>
-      <a class="logo" href="/"><strong>Barre Better</strong></a>
+      <a class="logo" href="/"><strong>barrebetter</strong></a>
     </div>
   <div id="responsive-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li><%= link_to "Find a Class", trainings_path, :class => 'navbar-link'  %></li>
+      </ul>
+    </div>
     <div class="top-bar-right">
-      <p class="navbar-text pull-right">
-        <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'My Account', edit_user_registration_path, :class => 'navbar-link' %> ||
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-        <%= link_to "New? Sign Up", new_user_registration_path, :class => 'navbar-link'  %> ||
-        <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
+      <% if user_signed_in? %>
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li>
+          <span><%= link_to current_user.first_name, user_path(current_user.id) %>  <i class="fa fa-user-o"></i></span>
+          <ul class="menu vertical">
+            <li><%= link_to 'My Account', edit_user_registration_path, :class => 'navbar-link' %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+          </ul>
+        </li>
+          <% else %>
+          <%= link_to "New? Sign Up", new_user_registration_path, :class => 'navbar-link'  %> ||
+          <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
+          <% end %>
+        </ul>
     </div>
   </div>
 </div>
-
 
   <body>
     <% if notice %>

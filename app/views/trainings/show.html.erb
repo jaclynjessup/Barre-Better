@@ -1,0 +1,21 @@
+<h1><%= @training.name %></h1>
+<p>Taught by: <%= @training.instructor.full_name %><br>
+  On: <%= @training.date.strftime("%B %d %Y") %><br>
+  At: <%= @training.timeslot.start_time %> - <%= @training.timeslot.end_time %><br>
+</p>
+<%= button_to "Reserve", training_user_histories_path(@training), :class => "button" %>
+
+<% if current_user.role == "instructor" || current_user.role == "admin" %>
+  <div>
+    <%= button_to "Delete Class", training_path, :class => "button" %>
+    <%= button_to "Update Class", edit_training_path, :class => "button" %>
+  </div>
+<% end %>
+<% if current_user.role == "instructor" || current_user.role == "admin" %>
+  <h1> Attendance:</h1>
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= user.first_name %> <%= user.last_name %></li>
+      <% end %>
+  </ul>
+<% end %>

@@ -9,8 +9,8 @@ require 'rails_helper'
 
 feature 'Sign Up' do
   scenario 'specifying valid and required information' do
-    visit root_path
-    click_link 'Sign Up'
+    visit '/'
+    click_link 'New? Sign Up'
 
     fill_in 'First Name', with: 'Heromine'
     fill_in 'Last Name', with: 'Granger'
@@ -24,7 +24,7 @@ feature 'Sign Up' do
   end
 
   scenario 'required information is not supplied' do
-    visit root_path
+    visit '/'
     click_link 'Sign Up'
     click_button 'Sign Up'
 
@@ -38,7 +38,7 @@ feature 'Sign Up' do
   end
 
   scenario 'password confirmation does not match' do
-    visit root_path
+    visit '/'
     click_link 'Sign Up'
 
     fill_in 'First Name', with: 'Heromine'
@@ -55,7 +55,7 @@ feature 'Sign Up' do
   end
 
   scenario 'invalid email supplied' do
-    visit root_path
+    visit '/'
     click_link 'Sign Up'
     fill_in 'Email', with: 'hg@gmailcom'
     click_button 'Sign Up'
@@ -66,7 +66,7 @@ feature 'Sign Up' do
   end
 
   scenario 'password is too short' do
-    visit root_path
+    visit '/'
     click_link 'Sign Up'
     fill_in 'Password', with: '777'
     click_button 'Sign Up'
