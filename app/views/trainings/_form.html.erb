@@ -6,8 +6,8 @@
     </div>
 
     <div>
-      <%= f.label :timeslot %>
-      <%= f.collection_radio_buttons(:timeslot, @timeslots, :id, :start_time) %>
+      <%= f.label :timeslots %>
+      <%= f.select(:timeslot_id,options_for_select(@time)) %>
     </div>
 
     <div>
@@ -16,8 +16,8 @@
     </div>
 
     <div>
-      <%= f.label :instructor %>
-      <%= f.collection_radio_buttons(:instructor, @instructors, :id, :full_name)%>
+      <%= f.label :instructors %>
+      <%= f.collection_radio_buttons(:instructor_id, @instructors, :id, :full_name)%>
     </div>
 
     <div>
