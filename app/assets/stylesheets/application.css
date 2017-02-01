@@ -19,7 +19,7 @@
 
 .logo {
   color: white;
-  font-family: Lobster;
+  font-family: 'Dancing Script', cursive;
   font-size: 46px;
   font-style: normal;
   font-variant: normal;
@@ -27,7 +27,8 @@
   line-height: 26.4px;
 }
 .top-bar li {
-  font-family: "Patrick Hand";
+  font-family: "Gotham SSm A","Gotham SSm B",sans-serif;
+  text-transform: uppercase;
 }
 
 .top-bar a {
@@ -35,9 +36,12 @@
 }
 
 #responsive-menu {
-  font-family: "Patrick Hand";
+  font-family: "Gotham SSm A","Gotham SSm B",sans-serif;
+  text-transform: uppercase;
   color: white;
-  font-size: 26px;
+  font-size: 12px;
+  line-height: 40px;
+  padding: 10px;
 }
 
 a:hover {
@@ -46,12 +50,13 @@ a:hover {
 
 
 h1 {
-  font-family: Lobster;
+  font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   color: #FF8383;
 }
 
-h3 {
+h2 {
+  font-family: 'Open Sans Condensed', sans-serif;;
   text-align: center;
 }
 
@@ -77,4 +82,21 @@ h3 {
 .button:hover {
     background-color: #F36B75;
     color: white;
+}
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid #F36B75;
+}
+input[type=email] {
+    border: none;
+    border-bottom: 2px solid #F36B75;
+}
+input[type=password] {
+    border: none;
+    border-bottom: 2px solid #F36B75;
+}
+
+table {
+  text-transform: uppercase;
+  text-align: center;
 }

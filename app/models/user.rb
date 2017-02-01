@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :user_history
-  has_many :trainings, through: :user_history
+  has_many :user_histories
+  has_many :trainings, through: :user_histories
 
   validates :username, uniqueness: true, presence: true
   validates :first_name, presence: true

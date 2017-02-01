@@ -3,7 +3,7 @@ class Training < ApplicationRecord
   belongs_to :instructor
 
   has_many :user_histories
-  has_many :users, through: :user_history
+  has_many :users, through: :user_histories
 
   validates :name, presence: true
   validates :timeslot, presence: true

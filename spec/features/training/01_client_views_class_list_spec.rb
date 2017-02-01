@@ -4,8 +4,6 @@ require 'rails_helper'
 # I want to view all of the classes
 # So that I can see what class I want to take
 #   [x] I must be signed in to view classes
-#   [] I will see a list of all classes from today on
-#   [] I will not see a sign-up for classes that has passed
 
 feature "client visits class index page" do
   scenario "client can see list of classes" do
@@ -26,5 +24,16 @@ feature "client visits class index page" do
     expect(page).to have_content training.date.strftime("%B %d %Y")
     expect(page).to have_content training.timeslot.start_time
     expect(page).to have_content training.timeslot.end_time
+  end
+
+  scenario "client cannot see classes unless signed in" do
+    training = FactoryGirl.create(:training)
+    user = FactoryGirl.create(:user)
+    visit '/'
+
+    click_link 'Find a Class'
+
+    expect(page).to have_content "Sign In"
+    expect(page).to_not have_content "Schedule"
   end
 end

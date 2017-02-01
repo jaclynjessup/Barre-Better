@@ -7,8 +7,30 @@ class TrainingsController < ApplicationController
     end
   end
 
+  def show
+    @training = Training.find(params[:id])
+    @users = @training.users
+  end
+
   def new
     @training = Training.new
+    @timeslots = Timeslot.all
+    @instructors = Instructor.all
+  end
+
+  def create
+    @training = Training.new(params_strong)
+    if @training.save
+      flash[:notice] = "Class has been added to the schedule."
+      redirect_to trainings_path
+    else
+      flash[:notice] = @training.errors.full_messages.to_sentence
+      render :new
+    end
+  end
+
+  def edit
+    @training = Training.find(params[:id])
     @time = []
     @timeslots = Timeslot.all
     @timeslots.each do |timeslot|
@@ -18,8 +40,24 @@ class TrainingsController < ApplicationController
   end
 
   def update
+    @training = Training.find(params[:training_id])
+    if @training.save
+      flash[:notice] = "Class has been added to the schedule."
+      redirect_to trainings_path
+    else
+      flash[:notice] = @training.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
-  def destroy
+  private
+
+  def params_strong
+    params.require(:training).permit(
+      :name,
+      :timeslot,
+      :instructor,
+      :date
+    )
   end
 end

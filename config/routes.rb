@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :destroy]
-  resources :trainings
+  resources :trainings do
+    resources :user_histories, only: [:create]
+  end
+
+  resources :user_histories, only: [:destroy]
 end

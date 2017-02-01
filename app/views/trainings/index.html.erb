@@ -1,4 +1,8 @@
-<h3>Schedule for Barre Better</h3>
+<h2>Schedule for Barre Better</h2>
+
+<% if current_user.role == "instructor" || current_user.role == "admin" %>
+  <%= button_to "Add a Class", new_training_path, :class => "button" %>
+<% end %>
 
 <div class="row">
   <div class="columns">
@@ -14,7 +18,7 @@
         </thead>
         <tbody>
           <% @trainings.each do |training| %>
-            <tr a href="/trainings/<%= training.id %>">
+            <tr data-link="<%= training_path(training) %>" id="show-<%= training.id %>">
               <td><span><%= training.date.strftime("%B %d %Y") %></span></td>
               <td><span><%= training.timeslot.start_time %> - <%= training.timeslot.end_time %></span></td>
               <td><span><%= training.name %></span></td>

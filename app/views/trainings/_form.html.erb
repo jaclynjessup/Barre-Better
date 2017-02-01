@@ -7,7 +7,7 @@
 
     <div>
       <%= f.label :timeslot %>
-      <%= f.select(:timeslot, options_for_select(@time)) %>
+      <%= f.collection_radio_buttons(:timeslot, @timeslots, :id, :start_time) %>
     </div>
 
     <div>
