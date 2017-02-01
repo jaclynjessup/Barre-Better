@@ -14,7 +14,11 @@ class TrainingsController < ApplicationController
 
   def new
     @training = Training.new
+    @time = []
     @timeslots = Timeslot.all
+    @timeslots.each do |timeslot|
+      @time << "#{timeslot.start_time} - #{timeslot.end_time}"
+    end
     @instructors = Instructor.all
   end
 
@@ -55,8 +59,8 @@ class TrainingsController < ApplicationController
   def params_strong
     params.require(:training).permit(
       :name,
-      :timeslot,
-      :instructor,
+      :timeslot_id,
+      :instructor_id,
       :date
     )
   end

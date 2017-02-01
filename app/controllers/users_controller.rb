@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+    @user = User.find(params[:id])
+    @trainings = @user.trainings
+  end
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy
