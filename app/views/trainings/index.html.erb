@@ -1,7 +1,7 @@
 <h2>Schedule for Barre Better</h2>
 
 <% if current_user.role == "instructor" || current_user.role == "admin" %>
-  <%= button_to "Add a Class", new_training_path, :class => "button" %>
+  <%= button_to "Add a Class", new_training_path, :class => "button", method: :get %>
 <% end %>
 
 <div class="row">
