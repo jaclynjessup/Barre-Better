@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index, :destroy]
+  resources :trainings
+  
+  resources :users, only: [:index, :destroy, :show]
+
   resources :trainings do
     resources :user_histories, only: [:create]
   end
