@@ -18,7 +18,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @trainings.each do |training| %>
+            <% @trainings.order('date').each do |training| %>
               <tr data-link="<%= training_path(training) %>" id="show-<%= training.id %>">
                 <td><span><%= training.date.strftime("%B %d %Y") %></span></td>
                 <td><span><%= training.timeslot.start_time %> - <%= training.timeslot.end_time %></span></td>

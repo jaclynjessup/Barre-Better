@@ -7,6 +7,10 @@
 
         <h3>Class History:</h3>
 
+        <%= bar_chart @trainings.group(:name).count %>
+        <%= pie_chart @trainings.group(:instructor).count %>
+        <%= column_chart @trainings.group_by_day_of_week(:date, format: "%a").count %>
+
       <div class="row">
         <div class="columns">
           <div class="callout">
@@ -20,7 +24,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% @trainings.each do |training| %>
+                <% @trainings.order('date').each do |training| %>
                   <tr data-link="<%= training_path(training) %>" id="show-<%= training.id %>">
                     <td><span><%= training.date.strftime("%B %d %Y") %></span></td>
                     <td><span><%= training.timeslot.start_time %> - <%= training.timeslot.end_time %></span></td>
