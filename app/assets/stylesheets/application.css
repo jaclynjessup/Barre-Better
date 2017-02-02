@@ -116,7 +116,15 @@ body {
 
 .content-box {
   margin-top: 50px;
-  background: rgba(255, 255, 255, .7);
+  background-image: url('/assets/marble.jpg');
   border-radius: 50px;
   padding: 30px 50px 30px 50px;
+}
+
+.alert {
+  background-color: #F36B75;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
 }
