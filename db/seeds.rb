@@ -36,3 +36,6 @@ end
 
 User.create(first_name: "Client", last_name: "Test", email: "client@barrebetter.com", password: "barre1",
     username: "client1", role: "client")
+
+User.create(first_name: "Instructor", last_name: "Test", email: "instructor@barrebetter.com", password: "barre1",
+    username: "instructor1", role: "instructor")
