@@ -120,12 +120,3 @@ body {
   font-size: 20px;
   text-transform: uppercase;
 }
-
-#panel1 {
-height: 400px;
-}
-
-#panel2 {
-height: 400px;
-padding-right: 0px;
-}
