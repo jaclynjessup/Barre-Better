@@ -8,21 +8,20 @@ require 'rails_helper'
 #   [] I must see a reserve button on a class that I am not signed up for
 
 feature "client wants to reserve their spot at the barre" do
-  pending scenario "client reserves their spot" do
+  scenario "client reserves their spot" do
     training = FactoryGirl.create(:training)
     user = FactoryGirl.create(:user)
     visit '/'
     sign_in user
     click_link 'Find a Class'
 
-    click_link("show-#{training.id}")
-
-    expect(page).to have_content training.name
+    page.find(:css, ".show-#{training.id}").click
+save_and_open_page
+    expect(page).to have_content training.barre_type.name
     expect(page).to have_content training.instructor.full_name
     expect(page).to have_content training.date.strftime("%B %d %Y")
     expect(page).to have_content training.timeslot.start_time
     expect(page).to have_content training.timeslot.end_time
-    expect(page).to have_content "Reserve"
 
     click_button "Reserve"
 

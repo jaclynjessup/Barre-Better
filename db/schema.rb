@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170131183413) do
+ActiveRecord::Schema.define(version: 20170203160947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "barre_types", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.text     "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "instructors", force: :cascade do |t|
     t.string   "full_name",  null: false
@@ -28,12 +35,13 @@ ActiveRecord::Schema.define(version: 20170131183413) do
   end
 
   create_table "trainings", force: :cascade do |t|
-    t.string   "name",          null: false
+    t.integer  "barre_type_id", null: false
     t.integer  "timeslot_id",   null: false
     t.date     "date",          null: false
     t.integer  "instructor_id", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["barre_type_id"], name: "index_trainings_on_barre_type_id", using: :btree
     t.index ["instructor_id"], name: "index_trainings_on_instructor_id", using: :btree
     t.index ["timeslot_id"], name: "index_trainings_on_timeslot_id", using: :btree
   end

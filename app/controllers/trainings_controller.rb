@@ -20,6 +20,7 @@ class TrainingsController < ApplicationController
       @time << "#{timeslot.start_time} - #{timeslot.end_time}"
     end
     @instructors = Instructor.all
+    @types = BarreType.all
   end
 
   def create
