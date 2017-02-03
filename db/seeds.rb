@@ -18,16 +18,22 @@ Timeslot.create([{start_time: '5:30 AM', end_time: '6:30 AM'},
                 {start_time: '11:00 AM', end_time: '12:00 PM'}
               ])
 
+BarreType.create([{ name: 'Signature Barre', description: Faker::Hipster.paragraph(2) },
+                  { name: 'Sculpt Barre', description: Faker::Hipster.paragraph(2) },
+                  { name: 'Stretch Barre', description: Faker::Hipster.paragraph(2) },
+                  { name: 'Strength Barre', description: Faker::Hipster.paragraph(2) }
+  ])
+
 10.times { Instructor.create({
           full_name: Faker::Hipster.word,
           bio: Faker::Hipster.paragraph(2)
   }) }
 #
 Timeslot.all.each do |time|
-  names = ["Signature Barre", "Sculpt Barre", "Stretch Barre", "Strength Barre"]
+  names = BarreType.all
   instructors = Instructor.all
   Training.create({
-    name: names.sample,
+    barre_type: names.sample,
     date: Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today),
     timeslot: time,
     instructor: instructors.sample

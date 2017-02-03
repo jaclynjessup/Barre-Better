@@ -14,6 +14,7 @@ class TrainingsController < ApplicationController
 
   def new
     @training = Training.new
+    @types = BarreType.all
     @time = []
     @timeslots = Timeslot.all
     @timeslots.each do |timeslot|
@@ -35,6 +36,7 @@ class TrainingsController < ApplicationController
 
   def edit
     @training = Training.find(params[:id])
+    @types = BarreType.all
     @time = []
     @timeslots = Timeslot.all
     @timeslots.each do |timeslot|
@@ -58,7 +60,7 @@ class TrainingsController < ApplicationController
 
   def params_strong
     params.require(:training).permit(
-      :name,
+      :barre_type_id,
       :timeslot_id,
       :instructor_id,
       :date
