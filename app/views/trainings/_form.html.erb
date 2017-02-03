@@ -1,22 +1,23 @@
-<div class="class-form">
+<divclass="row">
   <%= form_for(@training) do |f| %>
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
 
     <div>
-      <%= f.label :timeslots %>
+      <%= f.label :barre_type, "Name" %>
+      <%= f.collection_radio_buttons(:barre_type_id, @types, :id, :name) %>
+    </div>
+
+    <div class="columns medium-6">
+      <%= f.label :timeslot %>
       <%= f.select(:timeslot_id,options_for_select(@time)) %>
     </div>
 
-    <div>
+    <div class="columns medium-6">
       <%= f.label :date %>
       <%= f.date_field :date %>
     </div>
 
     <div>
-      <%= f.label :instructors %>
+      <%= f.label :instructor %>
       <%= f.collection_radio_buttons(:instructor_id, @instructors, :id, :full_name)%>
     </div>
 

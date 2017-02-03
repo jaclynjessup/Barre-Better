@@ -48,7 +48,6 @@ a:hover {
     color: #D2C9CC;
 }
 
-
 h1 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
@@ -65,13 +64,6 @@ h3 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   color: #FF8383;
-}
-
-.user-form {
-  text-align: center;
-  width: 20%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .class-form {

@@ -8,7 +8,7 @@ require 'rails_helper'
 #   [] I must see a cancel button on a class that I am signed up for
 
 feature "client un-signs up for a class" do
-  scenario "client un-signs up for a class they are signed up for" do
+  pending scenario "client un-signs up for a class they are signed up for" do
     training = FactoryGirl.create(:training)
     user = FactoryGirl.create(:user)
     visit '/'

@@ -19,7 +19,7 @@ feature "client visits class index page" do
     click_link 'Find a Class'
 
     expect(page).to have_content "Schedule"
-    expect(page).to have_content training.name
+    expect(page).to have_content training.barre_type.name
     expect(page).to have_content training.instructor.full_name
     expect(page).to have_content training.date.strftime("%B %d %Y")
     expect(page).to have_content training.timeslot.start_time
