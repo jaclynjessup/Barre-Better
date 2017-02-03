@@ -5,12 +5,31 @@
         <h1><%= @user.first_name %> <%= @user.last_name %>'s profile</h1>
       </div>
 
-        <h3>Class History:</h3>
+    <h3>Class History:</h3>
 
-        <%= bar_chart @trainings.group(:name).count, colors: ["#F36B75"], label: "Total Classes" %>
-        <%= column_chart @trainings.group_by_day_of_week(:date, format: "%a").count, Decimals: false, colors: ["#B0A9B0"], label: "Total Classes" %>
-        <%= pie_chart @trainings.joins(:instructor).group(:full_name).count, donut: true, colors: ["#F36B75", "#FEA3A2", "#D2C9CC", "#FF8383", "#B0A9B0"] %>
-        <%= pie_chart @trainings.joins(:timeslot).group(:start_time).count, colors: ["#F36B75", "#FEA3A2", "#D2C9CC", "#FF8383", "#B0A9B0"] %>
+        <ul class="accordion" data-accordion data-allow-all-closed="true">
+          <li class="accordion-item is-active" data-accordion-item>
+            <a href="#" class="accordion-title">Total Barre Classes</a>
+              <div class="accordion-content" data-tab-content>
+                <%= bar_chart @trainings.group(:name).count, colors: ["#F36B75"], label: "Total Classes" %>
+              </div>
+            </li>
+            <a href="#" class="accordion-title">Barre Classes By Day of the Week</a>
+              <div class="accordion-content" data-tab-content>
+                <%= column_chart @trainings.group_by_day_of_week(:date, format: "%a").count, Decimals: false, colors: ["#B0A9B0"], label: "Total Classes" %>
+              </div>
+            </li>
+            <a href="#" class="accordion-title">Barre Classes by Instructor</a>
+              <div class="accordion-content" data-tab-content>
+                <%= pie_chart @trainings.joins(:instructor).group(:full_name).count, donut: true, colors: ["#F36B75", "#FEA3A2", "#D2C9CC", "#FF8383", "#B0A9B0"] %>
+              </div>
+            </li>
+            <a href="#" class="accordion-title">Barre Classes by Time</a>
+              <div class="accordion-content" data-tab-content>
+                <%= pie_chart @trainings.joins(:timeslot).group(:start_time).count, colors: ["#F36B75", "#FEA3A2", "#D2C9CC", "#FF8383", "#B0A9B0"] %>
+              </div>
+            </li>
+          </ul>
 
       <div class="row">
         <div class="columns">

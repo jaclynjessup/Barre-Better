@@ -6,6 +6,7 @@
         On: <%= @training.date.strftime("%B %d %Y") %><br>
         At: <%= @training.timeslot.start_time %> - <%= @training.timeslot.end_time %><br>
       </p>
+
       <%= button_to "Reserve", training_user_histories_path(@training), :class => "button" %>
 
       <% if current_user.role == "instructor" || current_user.role == "admin" %>
