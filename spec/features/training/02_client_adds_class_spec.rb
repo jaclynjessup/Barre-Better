@@ -15,8 +15,9 @@ feature "client wants to reserve their spot at the barre" do
     sign_in user
     click_link 'Find a Class'
 
-    page.find(:css, ".show-#{training.id}").click
-save_and_open_page
+    page.find(:css, ".show-#{training.id}")
+    visit training_path(training)
+
     expect(page).to have_content training.barre_type.name
     expect(page).to have_content training.instructor.full_name
     expect(page).to have_content training.date.strftime("%B %d %Y")
