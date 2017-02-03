@@ -129,6 +129,11 @@ body {
   text-transform: uppercase;
 }
 
-.accordion {
+#panel1 {
+height: 400px;
+}
 
+#panel2 {
+height: 400px;
+padding-right: 0px;
 }
