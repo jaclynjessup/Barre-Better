@@ -6,12 +6,14 @@ Rails.application.routes.draw do
       root "static_pages#index", as: :authenticated_root
     end
     unauthenticated :user do
-      root 'static_pages#index', as: :unauthenticated_root
+      root 'static_pages#show', as: :unauthenticated_root
     end
   end
 
+  resources :abouts, only: [:index]
+
   resources :trainings
-  
+
   resources :users, only: [:index, :destroy, :show]
 
   resources :trainings do

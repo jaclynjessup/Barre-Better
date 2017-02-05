@@ -66,6 +66,11 @@ h3 {
   color: #FF8383;
 }
 
+h5 {
+  color: #F36B75;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
 .class-form {
   text-align: center;
   width: 20%;
@@ -119,4 +124,30 @@ body {
   color: white;
   font-size: 20px;
   text-transform: uppercase;
+}
+
+.center-align {
+  text-align: center;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #F36B75;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+p strong{
+  color: #F36B75;
 }
