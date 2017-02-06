@@ -25,8 +25,8 @@ BarreType.create([{ name: 'Signature Barre', description: Faker::Hipster.paragra
   ])
 
 10.times { Instructor.create({
-          full_name: Faker::HarryPotter.name,
-          bio: Faker::HarryPotter.quote
+          full_name: Faker::Hipster.word,
+          bio: Faker::Hipster.paragraph(2)
   }) }
 #
 Timeslot.all.each do |time|
