@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :instructor do
-    sequence(:full_name) { |n| "fullname#{n}" }
-    sequence(:bio) { Faker::Hipster.paragraph(2) }
+    sequence(:full_name) { Faker::HarryPotter.name }
+    sequence(:bio) { Faker::HarryPotter.quote }
   end
 end
