@@ -151,11 +151,3 @@ blockquote p {
 p strong{
   color: #F36B75;
 }
-
-#barre { transition: 1s; }
-
-svg:hover #Barre{ fill: darkslateblue; }
-
-svg:hover #ball{ fill: darkslateblue; }
-
-svg:hover #socks{ fill: darkslateblue; }
