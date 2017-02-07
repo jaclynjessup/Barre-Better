@@ -151,3 +151,13 @@ blockquote p {
 p strong{
   color: #F36B75;
 }
+.profile_photo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+.profile_thumb {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}

@@ -24,6 +24,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -47,5 +48,8 @@ gem 'faker'
 gem "font-awesome-rails"
 gem 'chartkick'
 gem 'groupdate'
+
+gem 'carrierwave'
+gem 'fog'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
