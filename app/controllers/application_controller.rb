@@ -15,7 +15,9 @@ protected
       :password,
       :role,
       :password_confirmation,
-      :remember_me
+      :remember_me,
+      :avatar,
+      :avatar_cache
     ]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs

@@ -18,14 +18,14 @@
             </tr>
           </thead>
           <tbody>
-            <% @trainings.order('date').each do |training| %>
-              <tr data-link="<%= training_path(training) %>" class="show-<%= training.id %>">
-                <td><span><%= training.date.strftime("%B %d %Y") %></span></td>
-                <td><span><%= training.timeslot.start_time %> - <%= training.timeslot.end_time %></span></td>
-                <td><span><%= training.barre_type.name %></span></td>
-                <td><span><%= training.instructor.full_name %></span></td>
-              </tr>
-            <% end %>
+              <% @trainings.order('date').each do |training| %>
+                <tr data-link="<%= training_path(training) %>" class="show-<%= training.id %>">
+                  <td><span><%= training.date.strftime("%B %d %Y") %></span></td>
+                  <td><span><%= training.timeslot.start_time %> - <%= training.timeslot.end_time %></span></td>
+                  <td><span><%= training.barre_type.name %></span></td>
+                  <td><span><%= training.instructor.full_name %></span></td>
+                </tr>
+              <% end %>
           </tbody>
         </table>
       </div>
