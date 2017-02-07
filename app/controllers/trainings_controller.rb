@@ -3,7 +3,7 @@ class TrainingsController < ApplicationController
     if current_user.nil?
       redirect_to new_user_session_path
     else
-      @trainings = Training.all
+      @trainings = Training.where('date >= ?', Date.today).order(:date)
     end
   end
 
