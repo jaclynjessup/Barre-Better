@@ -2,6 +2,7 @@
   <div class="columns">
     <div class="content-box">
       <h1><%= @training.barre_type.name %></h1>
+      <img class="profile_photo", src="<%= @training.instructor.avatar %>">
       <p>Taught by: <%= @training.instructor.full_name %><br>
         On: <%= @training.date.strftime("%B %d %Y") %><br>
         At: <%= @training.timeslot.start_time %> - <%= @training.timeslot.end_time %><br>
