@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :abouts, only: [:index]
 
   resources :trainings
+  resources :instructors
 
   resources :users, only: [:index, :destroy, :show]
 
