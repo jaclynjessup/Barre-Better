@@ -1,10 +1,12 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
+import data from './constants/data';
 
 $(function() {
   ReactDOM.render(
-    <h1>Boo yaa</h1>,
+    <App data={data} />,
     document.getElementById('app')
   );
 });
