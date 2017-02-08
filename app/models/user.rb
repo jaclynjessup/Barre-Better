@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { in: 6..20 }
   validates :role, acceptance: { accept: ['client', 'instructor', 'admin'] }
 
+  mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
