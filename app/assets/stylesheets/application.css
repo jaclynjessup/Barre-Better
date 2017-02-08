@@ -34,6 +34,9 @@
 .top-bar a {
   color: white;
 }
+.top-bar i {
+  color: white;
+}
 
 #responsive-menu {
   font-family: "Gotham SSm A","Gotham SSm B",sans-serif;
@@ -48,19 +51,7 @@ a:hover {
     color: #D2C9CC;
 }
 
-h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
-  text-align: center;
-  color: #FF8383;
-}
-
-h2 {
-  font-family: 'Open Sans Condensed', sans-serif;;
-  text-align: center;
-  color: #FF8383;
-}
-
-h3 {
+h1, h2, h3, h4 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   color: #FF8383;
@@ -204,4 +195,23 @@ i {
 
 .question_answer {
   border-bottom: 1px solid #B0A9B0;
+}
+
+.number-circle {
+  display: block;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+
+  -moz-border-radius: 50px; /* or 50% */
+  border-radius: 50px; /* or 50% */
+
+  background-color: #FEA3A2;
+  color: white;
+  text-align: center;
+  font-size: 5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+  margin-left: auto;
+  margin-right: auto;
 }
