@@ -7,14 +7,19 @@
         At: <%= @training.timeslot.start_time %> - <%= @training.timeslot.end_time %><br>
       </p>
 
-      <%= button_to "Reserve", training_user_histories_path(@training), :class => "button" %>
-
-      <% if current_user.role == "instructor" || current_user.role == "admin" %>
-        <div>
+      <div class="row">
+        <div class="large-4 columns">
+        <%= button_to "Reserve", training_user_histories_path(@training), :class => "button" %>
+        </div>
+        <% if current_user.role == "instructor" || current_user.role == "admin" %>
+        <div class="large-4 columns">
           <%= button_to "Delete Class", training_path, :class => "button" %>
+          </div>
+          <div class="large-4 columns">
           <%= button_to "Update Class", edit_training_path, :class => "button" %>
         </div>
-      <% end %>
+        <% end %>
+      </div>
       <% if current_user.role == "instructor" || current_user.role == "admin" %>
         <h1> Attendance:</h1>
         <ul>
