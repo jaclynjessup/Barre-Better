@@ -189,16 +189,17 @@ i {
 .question {
   font-size: 2rem;
   font-family: 'Open Sans Condensed', sans-serif;
+  color: #F36B75;
 }
 
 .answer {
   font-size: 1.5rem;
   font-family: 'Open Sans Condensed', sans-serif;
-  color: #FF8383;
+  color: #B0A9B0;
 }
 
 .selected {
-  color: #F36B75;
+  color: #FEA3A2;
 }
 
 .question_answer {
