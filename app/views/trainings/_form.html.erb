@@ -2,8 +2,11 @@
   <%= form_for(@training) do |f| %>
 
     <div>
-      <%= f.label :barre_type, "Name" %>
-      <%= f.collection_radio_buttons(:barre_type_id, @types, :id, :name) %>
+      <fieldset class="fieldset">
+        <legend>Barre Type:</legend>
+          <% f.label :barre_type %>
+          <%= f.collection_radio_buttons(:barre_type_id, @types, :id, :name) %>
+      </fieldset>
     </div>
 
     <div class="columns medium-6">
@@ -16,12 +19,17 @@
       <%= f.date_field :date %>
     </div>
 
-    <div>
-      <%= f.label :instructor %>
-      <%= f.collection_radio_buttons(:instructor_id, @instructors, :id, :full_name)%>
+    <div class="row">
+      <div class="columns">
+        <fieldset class="fieldset">
+          <legend>Instructor:</legend>
+            <% f.label :instructor %>
+            <%= f.collection_radio_buttons(:instructor_id, @instructors, :id, :full_name)%>
+        </fieldset>
+      </div>
     </div>
 
-    <div>
+    <div class="small-centered">
       <%= f.submit value="Create Class", :class => "button"%>
     </div>
   <% end %>
