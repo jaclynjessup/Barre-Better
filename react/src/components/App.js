@@ -42,7 +42,7 @@ class App extends Component {
 
     return (
       <div className="whatis-container">
-        <div className="heading text-center"><h2>What is Barre?</h2></div>
+        <div className="heading text-center"><h1>What is Barre?</h1></div>
         <ul>
           {questions}
         </ul>
