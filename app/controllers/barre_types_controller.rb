@@ -1,7 +1,4 @@
 class BarreTypesController < ApplicationController
-  def index
-    @types = BarreType.all
-  end
 
   def new
     @type = BarreType.new
@@ -11,7 +8,7 @@ class BarreTypesController < ApplicationController
     @type = BarreType.new(params_strong)
     if @type.save
       flash[:notice] = "You've updated the Barre Types."
-      redirect_to barre_types_path
+      redirect_to instructors_path
     else
       flash[:notice] = @type.errors.full_messages.to_sentence
       render :new
@@ -20,26 +17,32 @@ class BarreTypesController < ApplicationController
 
   def edit
     @type = BarreType.find(params[:id])
-    @types = BarreType.all
   end
 
   def update
     @type = BarreType.find(params[:barre_type_id])
     if @type.save
       flash[:notice] = "You've updated the Barre Types."
-      redirect_to barre_types_path
+      redirect_to instructors_path
     else
       flash[:notice] = @type.errors.full_messages.to_sentence
       render :new
     end
   end
 
+  def destroy
+    @type = BarreType.find(params[:id])
+    @type.destroy
+    flash[:notice] = "Barre Type Deleted!"
+    redirect_to instructors_path
+  end
+
   private
 
   def params_strong
     params.require(:barretype).permit(
-      :start_time,
-      :end_time
+      :name,
+      :description
     )
   end
 end

@@ -1,10 +1,8 @@
 class InstructorsController < ApplicationController
   def index
     @instructors = Instructor.all
-  end
-
-  def show
-    @instructor = Instructor.find(params[:id])
+    @types = BarreType.all
+    @timeslots = Timeslot.all
   end
 
   def new
@@ -15,7 +13,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new(params_strong)
     if @instructor.save
       flash[:notice] = "Instructor has been created"
-      redirect_to trainings_path
+      redirect_to instructors_path
     else
       flash[:notice] = @instructor.errors.full_messages.to_sentence
       render :new
@@ -30,11 +28,18 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.find(params[:instrutor_id])
     if @instructor.save
       flash[:notice] = "Instructor has been created"
-      redirect_to trainings_path
+      redirect_to instructors_path
     else
       flash[:notice] = @instructor.errors.full_messages.to_sentence
       render :new
     end
+  end
+
+  def destroy
+    @instructor = Instructor.find(params[:id])
+    @instructor.destroy
+    flash[:notice] = "Instructor Deleted!"
+    redirect_to instructors_path
   end
 
   private

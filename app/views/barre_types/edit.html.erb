@@ -4,10 +4,10 @@
       <% if current_user.nil? || current_user.role == "instructor" %>
       <h1>I'm sorry you don't have access to the page.</h1>
       <% else %>
-      <h1>Edit a Timeslot</h1>
+      <h1>Edit a Barre Type</h1>
 
       <%= render 'form' %>
-      <%= button_to "Delete Timeslot", timeslot_path(@Timeslot), method: :delete, :class => "button" %>
+      <%= button_to "Delete Barre Type", barre_type_path(@type), method: :delete, :class => "button" %>
       <% end %>
     </div>
   </div>

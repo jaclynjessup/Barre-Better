@@ -7,7 +7,7 @@
       <h1> Edit an Instructor</h1>
 
       <%= render 'form' %>
-      <%= button_to "Delete Instructor", instructor_path(instructor), :class => "button" %>
+      <%= button_to "Delete Instructor", instructor_path(@instructor), method: :delete, :class => "button" %>
       <% end %>
     </div>
   </div>

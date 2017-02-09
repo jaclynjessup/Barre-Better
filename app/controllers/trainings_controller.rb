@@ -56,6 +56,13 @@ class TrainingsController < ApplicationController
     end
   end
 
+  def destroy
+    @training = Training.find(params[:id])
+    @training.destroy
+    flash[:notice] = "Class Deleted!"
+    redirect_to trainings_path
+  end
+
   private
 
   def params_strong

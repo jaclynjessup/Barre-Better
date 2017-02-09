@@ -2,9 +2,58 @@
   <div class="columns">
     <div class="content-box text-center">
       <h1>Studio Mangement</h1>
-      <%= button_to "Add an Instructor", new_instructor_path, :class => "button", method: :get %>
-      <%= button_to "Add a Timeslot", new_timeslot_path, :class => "button", method: :get %>
-      <%= button_to "Add a Barre Type", new_barre_type_path, :class => "button", method: :get %>
+      <div class="row">
+      <div class="callout large-4 columns">
+        <table style="width:100%" class="hover">
+          <thead>
+            <tr>
+              <th>Instructors</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% @instructors.each do |instructor| %>
+                <tr data-link="<%= edit_instructor_path(instructor) %>">
+                  <td><span><%= instructor.full_name %></span></td>
+                </tr>
+              <% end %>
+          </tbody>
+        </table>
+        <%= button_to "Add an Instructor", new_instructor_path, :class => "button", method: :get %>
+      </div>
+      <div class="callout large-4 columns">
+        <table style="width:100%" class="hover">
+          <thead>
+            <tr>
+              <th>Timeslots</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% @timeslots.each do |timeslot| %>
+                <tr data-link="<%= edit_timeslot_path(timeslot) %>">
+                  <td><span><%= timeslot.start_time %> - <%= timeslot.end_time %></span></td>
+                </tr>
+              <% end %>
+          </tbody>
+        </table>
+        <%= button_to "Add a Timeslot", new_timeslot_path, :class => "button", method: :get %>
+      </div>
+      <div class="callout large-4 columns">
+        <table style="width:100%" class="hover">
+          <thead>
+            <tr>
+              <th>Barre Type</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% @types.each do |type| %>
+                <tr data-link="<%= edit_barre_type_path(type) %>">
+                  <td><span><%= type.name %></span></td>
+                </tr>
+              <% end %>
+          </tbody>
+        </table>
+        <%= button_to "Add a Barre Type", new_barre_type_path, :class => "button", method: :get %>
+      </div>
     </div>
   </div>
 </div>
