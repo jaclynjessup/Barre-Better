@@ -7,6 +7,16 @@
         <%= @trainings.count %>
       </div>
       <h3> barre classes!</h3>
+
+      <h2>Sign the Barre!</h2>
+
+      <% if @goals.count < 100 %>
+      <h3>You're only </h3>
+      <div class="number-circle">
+        <%= 100 - @goals.count %>
+      </div>
+      <h3>classes away from 100!</h3>
+      <% end %>
       <%= button_to "View your Full History", user_path(current_user.id), :class => "button", method: :get %>
     </div>
   </div>
