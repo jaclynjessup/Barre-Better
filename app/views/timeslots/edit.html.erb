@@ -1,7 +1,7 @@
 <div class="row">
   <div class="columns">
     <div class="content-box text-center">
-      <% if current_user.nil? || current_user.role == "instructor" %>
+      <% if current_user.nil? || current_user.role == "instructor" || current_user.role == "client" %>
       <h1>I'm sorry you don't have access to the page.</h1>
       <% else %>
       <h1>Edit a Timeslot</h1>

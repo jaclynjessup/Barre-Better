@@ -1,6 +1,9 @@
 <div class="row">
   <div class="columns">
     <div class="content-box text-center">
+      <% if current_user.nil? || current_user.role == "client" || current_user.role == "instructor" %>
+      <h1>I'm sorry you don't have access to the page.</h1>
+      <% else %>
       <h1>Studio Mangement</h1>
       <div class="row">
       <div class="callout large-4 columns">
@@ -54,6 +57,7 @@
         </table>
         <%= button_to "Add a Barre Type", new_barre_type_path, :class => "button", method: :get %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
