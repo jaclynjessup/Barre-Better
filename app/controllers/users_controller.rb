@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @trainings = @user.trainings
+    @trainings = @user.trainings.where('date <= ?', Date.today)
   end
 
   def destroy
