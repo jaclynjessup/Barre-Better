@@ -34,6 +34,9 @@
 .top-bar a {
   color: white;
 }
+.top-bar i {
+  color: white;
+}
 
 #responsive-menu {
   font-family: "Gotham SSm A","Gotham SSm B",sans-serif;
@@ -48,19 +51,7 @@ a:hover {
     color: #D2C9CC;
 }
 
-h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
-  text-align: center;
-  color: #FF8383;
-}
-
-h2 {
-  font-family: 'Open Sans Condensed', sans-serif;;
-  text-align: center;
-  color: #FF8383;
-}
-
-h3 {
+h1, h2, h3, h4 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   color: #FF8383;
@@ -77,24 +68,29 @@ h5 {
   margin-left: auto;
   margin-right: auto;
 }
+
 .button {
   background-color: white;
   color: black;
   border: 2px solid #F36B75;
   border-radius: 12px;
 }
+
 .button:hover {
     background-color: #F36B75;
     color: white;
 }
+
 input[type=text] {
     border: none;
     border-bottom: 2px solid #F36B75;
 }
+
 input[type=email] {
     border: none;
     border-bottom: 2px solid #F36B75;
 }
+
 input[type=password] {
     border: none;
     border-bottom: 2px solid #F36B75;
@@ -137,6 +133,7 @@ blockquote {
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
+
 blockquote:before {
   color: #ccc;
   content: open-quote;
@@ -145,19 +142,80 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
 blockquote p {
   display: inline;
 }
+
 p strong{
   color: #F36B75;
 }
+
 .profile_photo {
   height: 150px;
   width: 150px;
   border-radius: 50%;
 }
+
 .profile_thumb {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+.whatis-container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+i {
+  color: #B0A9B0;
+  margin-right: 0.5rem;
+}
+
+.question {
+  font-size: 2rem;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #F36B75;
+}
+
+.answer {
+  font-size: 1.5rem;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #B0A9B0;
+}
+
+.selected {
+  color: #FEA3A2;
+}
+
+.question_answer {
+  border-bottom: 1px solid #B0A9B0;
+}
+
+.number-circle {
+  display: block;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+
+  -moz-border-radius: 50px; /* or 50% */
+  border-radius: 50px; /* or 50% */
+
+  background-color: #FEA3A2;
+  color: white;
+  text-align: center;
+  font-size: 5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#image {
+  background: rgba(275, 275, 275, .7);
 }
