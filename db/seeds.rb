@@ -18,10 +18,10 @@ Timeslot.create([{start_time: '5:30 AM', end_time: '6:30 AM'},
                 {start_time: '11:00 AM', end_time: '12:00 PM'}
               ])
 
-BarreType.create([{ name: 'Signature Barre', description: Faker::Hipster.paragraph(2) },
-                  { name: 'Sculpt Barre', description: Faker::Hipster.paragraph(2) },
-                  { name: 'Stretch Barre', description: Faker::Hipster.paragraph(2) },
-                  { name: 'Strength Barre', description: Faker::Hipster.paragraph(2) }
+BarreType.create([{ name: 'Signature Barre', description: "Our signature class appeals to those who practice various exercise disciplines including Pilates, yoga, and even classical ballet. Set to carefully curated music, we choreograph each of our Signature classes to include everything you love about barre." },
+                  { name: 'Sculpt Barre', description: "Sculpt focuses on slow, impactful, deliberate movement designed to build strength and tone using only your body weight for resistance. The combinations, structure, and pace challenge you to go deeper into each exercise like never before" },
+                  { name: 'Stretch Barre', description: "Stretch consits of flowing movement which focuses on flexibility, balance, and core strength. The class progresses one movement at a time eventually building into a choreographic sequence repeated multiple times to varying tempos allowing you to enter into a state of active meditation" },
+                  { name: 'Strength Barre', description: "Strength focuses on mixing signature and sculpt classes to leave you feeling even stronger. The combinations of deliberate movement designed to build strength and tone along with dance conditioning, strength training, balance work, and cardio." }
   ])
 
 10.times { Instructor.create({
