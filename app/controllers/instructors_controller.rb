@@ -42,7 +42,9 @@ class InstructorsController < ApplicationController
   def params_strong
     params.require(:instructor).permit(
       :full_name,
-      :bio
+      :bio,
+      :avatar,
+      :avatar_cache
     )
   end
 end

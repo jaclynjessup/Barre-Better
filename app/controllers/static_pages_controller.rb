@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def index
     @user = current_user
     @trainings = @user.trainings
-    @goals = @user.trainings.where('date <= ?', Date.today)
+    @goals = @trainings.where('date <= ?', Date.today)
   end
 
   def show

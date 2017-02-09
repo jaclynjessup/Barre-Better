@@ -217,5 +217,6 @@ i {
 }
 
 #image {
+  border-radius: 50px;
   background: rgba(275, 275, 275, .7);
 }
