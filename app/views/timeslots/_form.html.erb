@@ -1,0 +1,19 @@
+<div class="row">
+  <%= form_for(@timeslot) do |f| %>
+
+  <div class="row">
+    <div class="small-10 medium-6 columns">
+      <%= f.label :start_time, "Start Time HH:MM" %><br />
+      <%= f.text_field :start_time %>
+    </div>
+
+    <div class="small-10 medium-6 columns">
+      <%= f.label :end_time, "End Time HH:MM" %><br />
+      <%= f.text_field :end_time %>
+    </div>
+
+    <div class="small-centered">
+      <%= f.submit value="Create Timeslot", :class => "button"%>
+    </div>
+  <% end %>
+</div>
