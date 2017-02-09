@@ -5,14 +5,34 @@
       <img class="profile_photo", src="<%= @user.avatar %>">
 
     <h2>Class History:</h2>
-    <h4>Total Barre Classes</h4>
-    <%= bar_chart @trainings.joins(:barre_type).group(:name).count, colors: ["#F36B75"], label: "Total Classes" %>
-    <h4>Barre Classes By Day of the Week</h4>
-    <%= column_chart @trainings.group_by_day_of_week(:date, format: "%a").count, colors: ["#B0A9B0"], label: "Total Classes" %>
-    <h4>Barre Classes by Instructor</h4>
-    <%= pie_chart @trainings.joins(:instructor).group(:full_name).count, donut: true, colors: ["#F36B75", "#FEA3A2", "#D2C9CC", "#FF8383", "#B0A9B0"] %>
-    <h4>Barre Classes By Time</h4>
-    <%= pie_chart @trainings.joins(:timeslot).group(:start_time).count, colors: ["#F36B75", "#FEA3A2", "#D2C9CC", "#FF8383", "#B0A9B0"] %></br>
+    <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+      <li class="accordion-item is-active" data-accordion-item>
+        <a href="#" class="accordion-title"><h4>Total Barre Classes</h4></a>
+        <div class="accordion-content" data-tab-content>
+          <%= bar_chart @trainings.joins(:barre_type).group(:name).count, colors: ["#F36B75"], label: "Total Classes" %>
+        </div>
+      </li>
+      <li class="accordion-item is-active" data-accordion-item>
+        <a href="#" class="accordion-title"><h4>Barre Classes By Day of the Week</h4></a>
+        <div class="accordion-content" data-tab-content>
+          <%= column_chart @trainings.group_by_day_of_week(:date, format: "%a").count, colors: ["#B0A9B0"], label: "Total Classes" %>
+        </div>
+      </li>
+      <li class="accordion-item is-active" data-accordion-item>
+        <a href="#" class="accordion-title"><h4>Barre Classes by Instructor</h4></a>
+        <div class="accordion-content" data-tab-content>
+          <%= pie_chart @trainings.joins(:instructor).group(:full_name).count, donut: true, colors: ["#F36B75", "#FEA3A2", "#D2C9CC", "#FF8383", "#B0A9B0"] %>
+        </div>
+      </li>
+      <li class="accordion-item is-active" data-accordion-item>
+        <a href="#" class="accordion-title"><h4>Barre Classes By Time</h4></a>
+        <div class="accordion-content" data-tab-content>
+          <%= pie_chart @trainings.joins(:timeslot).group(:start_time).count, colors: ["#F36B75", "#FEA3A2", "#D2C9CC", "#FF8383", "#B0A9B0"] %>
+        </div>
+      </li>
+  </ul>
+
+  </br>
 
       <div class="row">
         <div class="columns">

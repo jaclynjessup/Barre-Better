@@ -1,0 +1,19 @@
+<div class="row">
+  <%= form_for(@type) do |f| %>
+
+  <div class="row">
+    <div class="small-10 medium-6 columns">
+      <%= f.label :name, "Name" %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="small-10 medium-6 columns">
+      <%= f.label :description, "Description" %><br />
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="small-centered">
+      <%= f.submit value="Create Barre Type", :class => "button"%>
+    </div>
+  <% end %>
+</div>

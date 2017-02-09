@@ -5,7 +5,7 @@ import App from './components/App';
 import data from './constants/data';
 
 $(function() {
-  let reactAppElement = document.getElementById('app');
+  let reactAppElement = document.getElementById('App');
   if (reactAppElement) {
     ReactDOM.render(
       <App data={data} />,
