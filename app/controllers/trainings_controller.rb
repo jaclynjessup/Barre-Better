@@ -33,11 +33,7 @@ class TrainingsController < ApplicationController
   def edit
     @training = Training.find(params[:id])
     @types = BarreType.all
-    @time = []
     @timeslots = Timeslot.all
-    @timeslots.each do |timeslot|
-      @time << "#{timeslot.start_time} - #{timeslot.end_time}"
-    end
     @instructors = Instructor.all
   end
 
