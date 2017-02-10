@@ -3,7 +3,7 @@ class TrainingsController < ApplicationController
     if current_user.nil?
       redirect_to new_user_session_path
     else
-      @trainings = Training.where('date >= ?', Date.today).order(:date)
+      @trainings = Training.where('date >= ?', Date.today).order(:date, :timeslot_id)
     end
   end
 
@@ -15,11 +15,7 @@ class TrainingsController < ApplicationController
   def new
     @training = Training.new
     @types = BarreType.all
-    @time = []
     @timeslots = Timeslot.all
-    @timeslots.each do |timeslot|
-      @time << "#{timeslot.start_time} - #{timeslot.end_time}"
-    end
     @instructors = Instructor.all
   end
 

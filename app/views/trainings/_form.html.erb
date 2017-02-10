@@ -8,13 +8,15 @@
           <%= f.collection_radio_buttons(:barre_type_id, @types, :id, :name) %>
       </fieldset>
     </div>
-
-    <div class="columns medium-6">
-      <%= f.label :timeslot %>
-      <%= f.select(:timeslot_id,options_for_select(@time)) %>
+    <div>
+      <fieldset class="fieldset">
+        <legend>Time:</legend>
+          <% f.label :timeslot %>
+          <%= f.collection_radio_buttons(:timeslot_id, @timeslots, :id, :start_time) %>
+      </fieldset>
     </div>
 
-    <div class="columns medium-6">
+    <div class="columns large-3">
       <%= f.label :date %>
       <%= f.date_field :date %>
     </div>
