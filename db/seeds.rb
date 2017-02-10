@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Timeslot.create([{start_time: '5:30 AM', end_time: '6:30 AM'},
                 {start_time: '7:00 AM', end_time: '8:00 AM'},
                 {start_time: '8:15 AM', end_time: '9:15 AM'},
@@ -40,7 +33,7 @@ Timeslot.all.each do |time|
     })
 end
 
-User.create(first_name: "Client", last_name: "Test", email: "client@barrebetter.com", password: "barre1",
-    username: "client1", role: "client")
+User.create(first_name: "Client", last_name: "Test", email: "client@barrebetter.com", password: "barre1", username: "client1", role: "client")
 
 User.create(first_name: "Instructor", last_name: "Test", email: "instructor@barrebetter.com", password: "barre1", username: "instructor1", role: "instructor")
+
