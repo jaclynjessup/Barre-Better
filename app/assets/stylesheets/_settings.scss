@@ -417,6 +417,7 @@ $menu-item-background-active: get-color(primary);
 $menu-icon-spacing: 0.25rem;
 $menu-item-background-hover: $light-gray;
 $menu-border: $light-gray;
+$menu-icon-color: $white;
 
 // 23. Meter
 // ---------
@@ -618,3 +619,5 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
+$topbar-menu-icon-color: $white;
+$topbar-menu-link-color: $white;
