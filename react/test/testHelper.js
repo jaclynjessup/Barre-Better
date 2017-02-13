@@ -3,11 +3,14 @@ import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
 import $ from 'jquery';
 import 'jasmine-ajax';
+import simulateIfPresent from './support/simulateIfPresent';
+
 
 Object.assign(global, {
   jasmineEnzyme,
   mount,
   React,
+  simulateIfPresent,
   shallow,
   $
 });
