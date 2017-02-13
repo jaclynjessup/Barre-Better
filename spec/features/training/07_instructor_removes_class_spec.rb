@@ -43,4 +43,26 @@ feature "Instructor wishes to delete a class" do
     expect(page).to have_content training.timeslot.end_time
     expect(page).to_not have_button "Delete Class"
   end
+
+  scenario "instructor can view delete button" do
+    training7 = FactoryGirl.create(:training)
+    instructor = FactoryGirl.create(:user, role: "instructor")
+    user = FactoryGirl.create(:user)
+    userhistory = FactoryGirl.create(:user_history, user: user, training: training7)
+
+    visit '/'
+    sign_in instructor
+
+    visit training_path(training7)
+
+    expect(page).to have_content training7.barre_type.name
+    expect(page).to have_content training7.instructor.full_name
+    expect(page).to have_content training7.date.strftime("%B %d %Y")
+    expect(page).to have_content training7.timeslot.start_time
+    expect(page).to have_content training7.timeslot.end_time
+    expect(page).to have_content user.first_name
+    expect(page).to have_button "Delete Class"
+    click_button "Delete Class"
+    expect(page).to have_content("Class Deleted")
+  end
 end

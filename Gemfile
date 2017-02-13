@@ -39,7 +39,7 @@ group :production do
 end
 
 group :test do
-  gem 'coveralls', require: true
+  gem 'coveralls', require: false
 end
 
 gem 'devise'
