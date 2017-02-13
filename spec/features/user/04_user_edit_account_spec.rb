@@ -29,7 +29,7 @@ feature "user edits their account" do
     expect(page).to have_content("Edit User")
   end
 
-  pending scenario "user can edit first_name/last_name/username/email/password" do
+  scenario "user can edit first_name/last_name/username/email/password" do
     fill_in "First Name", with: "Ginny"
     fill_in "Last Name", with: "Weasley"
     fill_in "Username", with: "chaser6"

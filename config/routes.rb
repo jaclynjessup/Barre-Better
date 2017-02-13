@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :destroy, :show]
 
-  resources :trainings do
+  resources :trainings, only: [:show] do
     resources :user_histories, only: [:create]
   end
 

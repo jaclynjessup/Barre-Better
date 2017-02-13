@@ -17,7 +17,7 @@ class UserHistoriesController < ApplicationController
     @user_history = UserHistory.find(params[:id])
     if @user_history.destroy
       flash[:notice] = "We're sorry you can't join us at the barre."
-      reredirect_to training_path(@training)
+      redirect_to training_path(@user_history.training)
     else
       "You have not reserved your spot at the barre yet."
     end
