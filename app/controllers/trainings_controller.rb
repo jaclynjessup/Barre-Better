@@ -10,6 +10,7 @@ class TrainingsController < ApplicationController
   def show
     @training = Training.find(params[:id])
     @users = @training.users
+    @user_history = UserHistory.find_by(user: current_user, training: @training)
   end
 
   def new
@@ -21,6 +22,9 @@ class TrainingsController < ApplicationController
 
   def create
     @training = Training.new(params_strong)
+    @types = BarreType.all
+    @timeslots = Timeslot.all
+    @instructors = Instructor.all
     if @training.save
       flash[:notice] = "Class has been added to the schedule."
       redirect_to trainings_path
@@ -38,7 +42,7 @@ class TrainingsController < ApplicationController
   end
 
   def update
-    @training = Training.find(params[:training_id])
+    @training = Training.find(params[:id])
     if @training.save
       flash[:notice] = "Class has been added to the schedule."
       redirect_to trainings_path

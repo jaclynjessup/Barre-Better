@@ -14,7 +14,13 @@
           </div>
           <div class="large-4 columns">
             <div class="row">
+              <% if current_user.role != "instructor" %>
+              <% if current_user.user_histories.include?(@training) || @training.user_histories.empty? %>
               <%= button_to "Reserve", training_user_histories_path(@training), :class => "button" %>
+              <% else %>
+              <%= button_to "Unreserve", user_history_path(@user_history), method: :delete, :class => "button" %>
+              <% end %>
+              <% end %>
             </div>
             <div class="row">
               <p><strong>Taught by:</strong> <%= @training.instructor.full_name %><br>

@@ -24,6 +24,23 @@ feature "Instructor wishes to see who enrolled in class" do
     expect(page).to have_content training.date.strftime("%B %d %Y")
     expect(page).to have_content training.timeslot.start_time
     expect(page).to have_content training.timeslot.end_time
+    expect(page).to have_content "Attendance"
     expect(page).to have_content user.first_name
+  end
+
+  scenario "a user cannot view attendance" do
+    training = FactoryGirl.create(:training)
+    user = FactoryGirl.create(:user)
+    visit '/'
+    sign_in user
+
+    visit training_path(training)
+
+    expect(page).to have_content training.barre_type.name
+    expect(page).to have_content training.instructor.full_name
+    expect(page).to have_content training.date.strftime("%B %d %Y")
+    expect(page).to have_content training.timeslot.start_time
+    expect(page).to have_content training.timeslot.end_time
+    expect(page).to_not have_content "Attendance"
   end
 end
