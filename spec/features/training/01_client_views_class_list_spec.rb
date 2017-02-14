@@ -27,7 +27,7 @@ feature "client visits class index page" do
   end
 
   scenario "client cannot see classes unless signed in" do
-    training2 = FactoryGirl.create(:training)
+    training13 = FactoryGirl.create(:training)
     user = FactoryGirl.create(:user)
     visit '/'
 
