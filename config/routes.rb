@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   resources :abouts, only: [:index]
 
   resources :trainings
-  resources :instructors
-  resources :timeslots
-  resources :barre_types
+  resources :instructors, only: [:new, :create, :edit, :update, :destroy, :index]
+  resources :timeslots, only: [:new, :create, :edit, :update, :destroy]
+  resources :barre_types, only: [:new, :create, :edit, :update, :destroy]
 
   resources :users, only: [:index, :destroy, :show]
 

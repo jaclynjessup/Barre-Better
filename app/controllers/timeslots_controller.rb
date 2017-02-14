@@ -5,7 +5,7 @@ class TimeslotsController < ApplicationController
 
   def create
     @timeslot = Timeslot.new(params_strong)
-    if @instructor.save
+    if @timeslot.save
       flash[:notice] = "Timeslot has been created"
       redirect_to instructors_path
     else
@@ -19,9 +19,9 @@ class TimeslotsController < ApplicationController
   end
 
   def update
-    @timeslot = Timeslot.find(params[:timeslot_id])
+    @timeslot = Timeslot.find(params[:id])
     if @timeslot.save
-      flash[:notice] = "Timeslot has been created"
+      flash[:notice] = "You've updated the Timeslot"
       redirect_to instructors_path
     else
       flash[:notice] = @timeslot.errors.full_messages.to_sentence

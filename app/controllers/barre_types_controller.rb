@@ -20,7 +20,7 @@ class BarreTypesController < ApplicationController
   end
 
   def update
-    @type = BarreType.find(params[:barre_type_id])
+    @type = BarreType.find(params[:id])
     if @type.save
       flash[:notice] = "You've updated the Barre Types."
       redirect_to instructors_path
@@ -40,7 +40,7 @@ class BarreTypesController < ApplicationController
   private
 
   def params_strong
-    params.require(:barretype).permit(
+    params.require(:barre_type).permit(
       :name,
       :description
     )

@@ -25,9 +25,9 @@ class InstructorsController < ApplicationController
   end
 
   def update
-    @instructor = Instructor.find(params[:instrutor_id])
+    @instructor = Instructor.find(params[:id])
     if @instructor.save
-      flash[:notice] = "Instructor has been created"
+      flash[:notice] = "You've updated the Instructor"
       redirect_to instructors_path
     else
       flash[:notice] = @instructor.errors.full_messages.to_sentence
