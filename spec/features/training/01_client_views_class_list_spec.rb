@@ -7,7 +7,7 @@ require 'rails_helper'
 
 feature "client visits class index page" do
   scenario "client can see list of classes" do
-    training = FactoryGirl.create(:training)
+    training0 = FactoryGirl.create(:training)
     user = FactoryGirl.create(:user)
     visit '/'
     click_link 'Sign In'
@@ -19,15 +19,15 @@ feature "client visits class index page" do
     click_link 'Find a Class'
 
     expect(page).to have_content "Schedule"
-    expect(page).to have_content training.barre_type.name
-    expect(page).to have_content training.instructor.full_name
-    expect(page).to have_content training.date.strftime("%B %d %Y")
-    expect(page).to have_content training.timeslot.start_time
-    expect(page).to have_content training.timeslot.end_time
+    expect(page).to have_content training0.barre_type.name
+    expect(page).to have_content training0.instructor.full_name
+    expect(page).to have_content training0.date.strftime("%B %d %Y")
+    expect(page).to have_content training0.timeslot.start_time
+    expect(page).to have_content training0.timeslot.end_time
   end
 
   scenario "client cannot see classes unless signed in" do
-    training = FactoryGirl.create(:training)
+    training2 = FactoryGirl.create(:training)
     user = FactoryGirl.create(:user)
     visit '/'
 
